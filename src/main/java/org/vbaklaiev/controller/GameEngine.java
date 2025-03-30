@@ -5,6 +5,10 @@ import org.vbaklaiev.model.Player;
 import org.vbaklaiev.model.Result;
 import org.vbaklaiev.view.CommandInterface;
 
+/**
+ * Main game orchestrator that executes game rounds between two players.
+ * Handles result tracking and user interaction.
+ */
 public class GameEngine {
     private final Player player1;
     private final Player player2;
@@ -34,15 +38,15 @@ public class GameEngine {
             Result result = evaluator.evaluate(move1, move2);
             switch (result) {
                 case WIN -> {
-                    io.print(player1.getName() + " wins this round.");
+                    io.print(player1.getName() + " wins this round");
                     player1Wins++;
                 }
                 case LOSE -> {
-                    io.print(player2.getName() + " wins this round.");
+                    io.print(player2.getName() + " wins this round");
                     player2Wins++;
                 }
                 case DRAW -> {
-                    io.print("This round is a draw.");
+                    io.print("it's a draw");
                     draws++;
                 }
             }

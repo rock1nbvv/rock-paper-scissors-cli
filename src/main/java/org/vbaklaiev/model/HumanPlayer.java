@@ -19,7 +19,7 @@ public class HumanPlayer implements Player {
             if (move.isPresent()) {
                 return move.get();
             } else {
-                io.print("Invalid move. Try again.");
+                io.print("Invalid move. Try again");
             }
         }
     }

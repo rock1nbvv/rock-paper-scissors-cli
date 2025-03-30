@@ -20,7 +20,7 @@ public class PlayCommand implements Command {
             if (rounds <= 0) throw new NumberFormatException();
             gameEngine.playRounds(rounds);
         } catch (NumberFormatException ex) {
-            io.print("Invalid number. Please enter a positive integer.");
+            io.print("Invalid number. Please enter a positive integer");
         }
     }
 

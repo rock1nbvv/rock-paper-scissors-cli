@@ -6,7 +6,9 @@ public enum Move {
     ROCK, PAPER, SCISSORS;
 
     public static Optional<Move> fromString(String input) {
-        return switch (input.toLowerCase()) {
+        if (input == null || input.isBlank()) return Optional.empty();
+        String normalized = input.trim().toLowerCase();
+        return switch (normalized) {
             case "rock" -> Optional.of(ROCK);
             case "paper" -> Optional.of(PAPER);
             case "scissors" -> Optional.of(SCISSORS);

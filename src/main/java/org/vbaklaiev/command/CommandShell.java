@@ -12,12 +12,12 @@ public class CommandShell {
     }
 
     public void run() {
-        io.print("Welcome to Rock-Paper-Scissors.");
+        io.print("Welcome to Rock-Paper-Scissors");
         while (true) {
             String input = io.readInput("\nEnter command (" + registry.availableCommands() + "): ");
             registry.get(input).ifPresentOrElse(
                     Command::execute,
-                    () -> io.print("Unknown command. Try again.")
+                    () -> io.print("Unknown command. Try again")
             );
         }
     }
