@@ -1,3 +1,5 @@
+package org.vbaklaiev;
+
 import org.junit.jupiter.api.Test;
 import org.vbaklaiev.controller.OutcomeEvaluator;
 import org.vbaklaiev.model.Move;

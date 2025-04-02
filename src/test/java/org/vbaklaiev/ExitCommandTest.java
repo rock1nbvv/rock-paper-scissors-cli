@@ -1,3 +1,5 @@
+package org.vbaklaiev;
+
 import org.junit.jupiter.api.Test;
 import org.vbaklaiev.command.exit.ExitCommand;
 import org.vbaklaiev.command.exit.ExitHandler;

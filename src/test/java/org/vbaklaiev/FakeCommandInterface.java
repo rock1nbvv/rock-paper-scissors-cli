@@ -1,3 +1,5 @@
+package org.vbaklaiev;
+
 import org.vbaklaiev.view.CommandInterface;
 
 import java.util.ArrayList;

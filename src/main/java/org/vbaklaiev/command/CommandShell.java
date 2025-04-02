@@ -2,6 +2,9 @@ package org.vbaklaiev.command;
 
 import org.vbaklaiev.view.CommandInterface;
 
+/**
+ * Central input loop that dispatches user commands
+ */
 public class CommandShell {
     private final CommandRegistry registry;
     private final CommandInterface io;

@@ -5,13 +5,8 @@ import org.vbaklaiev.model.Result;
 
 public class OutcomeEvaluator {
 
-    public Result evaluate(Move playerMove, Move opponentMove) {
-        if (playerMove == opponentMove) {
-            return Result.DRAW;
-        } else if (playerMove.beats(opponentMove)) {
-            return Result.WIN;
-        } else {
-            return Result.LOSE;
-        }
+    public Result evaluate(Move player1, Move player2) {
+        if (player1 == player2) return Result.DRAW;
+        return player1.beats(player2) ? Result.WIN : Result.LOSE;
     }
 }
