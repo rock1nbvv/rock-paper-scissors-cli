@@ -1,4 +1,4 @@
-package org.vbaklaiev;
+package org.vbaklaiev.move;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

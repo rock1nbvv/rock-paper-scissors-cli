@@ -1,7 +1,6 @@
-package org.vbaklaiev.command;
+package org.vbaklaiev.model;
 
 import org.vbaklaiev.controller.OutcomeEvaluator;
-import org.vbaklaiev.model.Player;
 import org.vbaklaiev.view.CommandInterface;
 
 public class GameContext {

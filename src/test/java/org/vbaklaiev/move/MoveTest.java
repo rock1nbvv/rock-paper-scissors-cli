@@ -1,4 +1,4 @@
-package org.vbaklaiev;
+package org.vbaklaiev.move;
 
 import org.junit.jupiter.api.Test;
 import org.vbaklaiev.model.Move;
@@ -19,6 +19,11 @@ public class MoveTest {
     @Test
     void scissorsBeatsPaper() {
         assertThat(Move.SCISSORS.beats(Move.PAPER)).isTrue();
+    }
+
+    @Test
+    void scissorsLosesTowardsRock() {
+        assertThat(Move.SCISSORS.beats(Move.ROCK)).isFalse();
     }
 
     @Test

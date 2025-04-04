@@ -1,8 +1,8 @@
-package org.vbaklaiev;
+package org.vbaklaiev.command;
 
 import org.junit.jupiter.api.Test;
-import org.vbaklaiev.command.GameContext;
-import org.vbaklaiev.command.StartGameCommand;
+import org.vbaklaiev.controller.command.StartGameCommand;
+import org.vbaklaiev.model.GameContext;
 import org.vbaklaiev.controller.OutcomeEvaluator;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -22,17 +22,21 @@ public class StartGameCommandTest {
     }
 
     @Test
-    void defaultsToOneRoundForInvalidInput() {
+    void retriesUntilValidInput() {
         FakeCommandInterface io = new FakeCommandInterface();
-        io.addInput("invalid");
+        io.addInput("abc");
+        io.addInput("-2");
+        io.addInput("3");
 
-        GameContext context = new GameContext(null, null, io, new OutcomeEvaluator());
+        GameContext context = new GameContext(null, null, io, null);
         StartGameCommand cmd = new StartGameCommand(context);
 
         cmd.execute();
 
-        assertThat(context.totalRounds).isEqualTo(1);
-        assertThat(io.getOutputs()).anyMatch(out -> out.contains("Invalid input"));
+        assertThat(context.totalRounds).isEqualTo(3);
+        assertThat(io.getOutputs()).filteredOn(line -> line.contains("Invalid input"))
+                .hasSize(2);
+        assertThat(io.getOutputs()).filteredOn(line -> line.contains("How many rounds"))
+                .hasSize(3);
     }
-
 }

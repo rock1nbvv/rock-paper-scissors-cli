@@ -1,4 +1,6 @@
-package org.vbaklaiev.command;
+package org.vbaklaiev.controller.command;
+
+import org.vbaklaiev.model.GameContext;
 
 public class ShowResultsCommand implements Command {
     private final GameContext context;

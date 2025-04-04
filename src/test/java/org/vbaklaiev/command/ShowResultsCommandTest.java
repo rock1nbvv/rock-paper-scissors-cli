@@ -1,8 +1,8 @@
-package org.vbaklaiev;
+package org.vbaklaiev.command;
 
 import org.junit.jupiter.api.Test;
-import org.vbaklaiev.command.GameContext;
-import org.vbaklaiev.command.ShowResultsCommand;
+import org.vbaklaiev.controller.command.ShowResultsCommand;
+import org.vbaklaiev.model.GameContext;
 import org.vbaklaiev.controller.OutcomeEvaluator;
 import org.vbaklaiev.model.Move;
 import org.vbaklaiev.model.Player;

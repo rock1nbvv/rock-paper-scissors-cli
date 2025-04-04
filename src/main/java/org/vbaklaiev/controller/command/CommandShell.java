@@ -1,5 +1,6 @@
-package org.vbaklaiev.command;
+package org.vbaklaiev.controller.command;
 
+import org.vbaklaiev.controller.CommandRegistry;
 import org.vbaklaiev.view.CommandInterface;
 
 /**

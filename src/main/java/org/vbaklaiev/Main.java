@@ -1,13 +1,13 @@
 package org.vbaklaiev;
 
-import org.vbaklaiev.command.CommandRegistry;
-import org.vbaklaiev.command.CommandShell;
-import org.vbaklaiev.command.GameContext;
-import org.vbaklaiev.command.PlayGameCommand;
-import org.vbaklaiev.command.exit.DefaultExitHandler;
-import org.vbaklaiev.command.exit.ExitCommand;
+import org.vbaklaiev.controller.CommandRegistry;
+import org.vbaklaiev.controller.command.CommandShell;
+import org.vbaklaiev.model.GameContext;
+import org.vbaklaiev.controller.command.PlayGameCommand;
+import org.vbaklaiev.controller.command.exit.DefaultExitHandler;
+import org.vbaklaiev.controller.command.exit.ExitCommand;
 import org.vbaklaiev.controller.OutcomeEvaluator;
-import org.vbaklaiev.factory.PlayerFactory;
+import org.vbaklaiev.controller.PlayerFactory;
 import org.vbaklaiev.model.Player;
 import org.vbaklaiev.view.CommandInterface;
 import org.vbaklaiev.view.ConsoleCommandInterface;

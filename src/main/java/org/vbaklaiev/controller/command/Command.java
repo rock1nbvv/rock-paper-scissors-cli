@@ -1,4 +1,4 @@
-package org.vbaklaiev.command;
+package org.vbaklaiev.controller.command;
 
 public interface Command {
     void execute();

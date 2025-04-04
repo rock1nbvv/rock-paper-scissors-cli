@@ -1,4 +1,4 @@
-package org.vbaklaiev;
+package org.vbaklaiev.command;
 
 import org.vbaklaiev.view.CommandInterface;
 
@@ -10,6 +10,7 @@ import java.util.Queue;
 /**
  * Fake implementation of CommandInterface used for testing.
  * Mocks for user input/output.
+ * TODO can be rewritten with mockito
  */
 public class FakeCommandInterface implements CommandInterface {
     private final Queue<String> inputs = new LinkedList<>();

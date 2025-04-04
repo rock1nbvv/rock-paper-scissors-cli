@@ -1,4 +1,6 @@
-package org.vbaklaiev.command;
+package org.vbaklaiev.controller;
+
+import org.vbaklaiev.controller.command.Command;
 
 import java.util.HashMap;
 import java.util.Map;

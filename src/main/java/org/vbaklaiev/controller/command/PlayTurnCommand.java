@@ -1,9 +1,10 @@
-package org.vbaklaiev.command;
+package org.vbaklaiev.controller.command;
 
+import org.vbaklaiev.model.GameContext;
 import org.vbaklaiev.model.Move;
 import org.vbaklaiev.model.Result;
 
-public class PlayTurnCommand  implements Command {
+public class PlayTurnCommand implements Command {
     private final GameContext context;
 
     public PlayTurnCommand(GameContext context) {
@@ -11,7 +12,9 @@ public class PlayTurnCommand  implements Command {
     }
 
     @Override
-    public String name() { return "play-turn"; }
+    public String name() {
+        return "play-turn";
+    }
 
     @Override
     public void execute() {
@@ -25,9 +28,18 @@ public class PlayTurnCommand  implements Command {
 
         Result result = context.outcomeEvaluator.evaluate(m1, m2);
         switch (result) {
-            case WIN -> { context.io.print(context.player1.getName() + " wins the round."); context.wins1++; }
-            case LOSE -> { context.io.print(context.player2.getName() + " wins the round."); context.wins2++; }
-            case DRAW -> { context.io.print("This round is a draw."); context.draws++; }
+            case WIN -> {
+                context.io.print(context.player1.getName() + " is the winner of he round");
+                context.wins1++;
+            }
+            case LOSE -> {
+                context.io.print(context.player2.getName() + " is the winner of he round");
+                context.wins2++;
+            }
+            case DRAW -> {
+                context.io.print("This round is a draw.");
+                context.draws++;
+            }
         }
     }
 }

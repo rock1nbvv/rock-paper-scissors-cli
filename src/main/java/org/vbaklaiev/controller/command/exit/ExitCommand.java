@@ -1,6 +1,6 @@
-package org.vbaklaiev.command.exit;
+package org.vbaklaiev.controller.command.exit;
 
-import org.vbaklaiev.command.Command;
+import org.vbaklaiev.controller.command.Command;
 import org.vbaklaiev.view.CommandInterface;
 
 public class ExitCommand implements Command {

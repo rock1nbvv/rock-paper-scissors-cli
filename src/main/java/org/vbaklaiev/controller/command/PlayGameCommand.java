@@ -1,4 +1,6 @@
-package org.vbaklaiev.command;
+package org.vbaklaiev.controller.command;
+
+import org.vbaklaiev.model.GameContext;
 
 public class PlayGameCommand implements Command {
     private final GameContext context;
@@ -8,7 +10,9 @@ public class PlayGameCommand implements Command {
     }
 
     @Override
-    public String name() { return "play"; }
+    public String name() {
+        return "play";
+    }
 
     @Override
     public void execute() {
