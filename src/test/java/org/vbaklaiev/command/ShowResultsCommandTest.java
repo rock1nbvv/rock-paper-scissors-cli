@@ -3,7 +3,6 @@ package org.vbaklaiev.command;
 import org.junit.jupiter.api.Test;
 import org.vbaklaiev.controller.command.ShowResultsCommand;
 import org.vbaklaiev.model.GameContext;
-import org.vbaklaiev.controller.OutcomeEvaluator;
 import org.vbaklaiev.model.Move;
 import org.vbaklaiev.model.player.Player;
 
@@ -26,7 +25,7 @@ public class ShowResultsCommandTest {
         };
         FakeCommandInterface io = new FakeCommandInterface();
 
-        GameContext context = new GameContext(dummyPlayer, dummyPlayer, io, new OutcomeEvaluator());
+        GameContext context = new GameContext(dummyPlayer, dummyPlayer, io);
         context.wins1 = 2;
         context.wins2 = 1;
         context.draws = 3;

@@ -1,10 +1,9 @@
 package org.vbaklaiev;
 
 import org.vbaklaiev.controller.CommandRegistry;
-import org.vbaklaiev.controller.OutcomeEvaluator;
 import org.vbaklaiev.model.player.PlayerFactory;
 import org.vbaklaiev.controller.command.CommandShell;
-import org.vbaklaiev.controller.command.PlayGameCommand;
+import org.vbaklaiev.controller.command.PlayPveCommand;
 import org.vbaklaiev.controller.command.exit.DefaultExitHandler;
 import org.vbaklaiev.controller.command.exit.ExitCommand;
 import org.vbaklaiev.model.GameContext;
@@ -21,11 +20,10 @@ public class Main {
         Player human = factory.createHumanPlayer(io, playerName);
         Player computer = factory.createComputerPlayer();
 
-        OutcomeEvaluator evaluator = new OutcomeEvaluator();
-        GameContext context = new GameContext(human, computer, io, evaluator);
+        GameContext context = new GameContext(human, computer, io);
 
         CommandRegistry registry = new CommandRegistry();
-        registry.register(new PlayGameCommand(context));
+        registry.register(new PlayPveCommand(context));
         registry.register(new ExitCommand(io, new DefaultExitHandler()));
 
         CommandShell shell = new CommandShell(registry, io);

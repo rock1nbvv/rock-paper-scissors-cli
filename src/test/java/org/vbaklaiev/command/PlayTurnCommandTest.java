@@ -3,7 +3,7 @@ package org.vbaklaiev.command;
 import org.junit.jupiter.api.Test;
 import org.vbaklaiev.controller.command.PlayTurnCommand;
 import org.vbaklaiev.model.GameContext;
-import org.vbaklaiev.controller.OutcomeEvaluator;
+//import org.vbaklaiev.controller.OutcomeEvaluator;
 import org.vbaklaiev.model.Move;
 import org.vbaklaiev.model.player.Player;
 
@@ -36,7 +36,7 @@ import static org.assertj.core.api.Assertions.assertThat;
         Player p2 = new FixedPlayer(Move.SCISSORS, "Player2");
 
         FakeCommandInterface io = new FakeCommandInterface();
-        GameContext context = new GameContext(p1, p2, io, new OutcomeEvaluator());
+        GameContext context = new GameContext(p1, p2, io);
         PlayTurnCommand cmd = new PlayTurnCommand(context);
 
         cmd.execute();
@@ -51,7 +51,7 @@ import static org.assertj.core.api.Assertions.assertThat;
             Player p2 = new FixedPlayer(Move.PAPER, "Player2");
 
             FakeCommandInterface io = new FakeCommandInterface();
-            GameContext context = new GameContext(p1, p2, io, new OutcomeEvaluator());
+            GameContext context = new GameContext(p1, p2, io);
             PlayTurnCommand cmd = new PlayTurnCommand(context);
 
             cmd.execute();
@@ -66,7 +66,7 @@ import static org.assertj.core.api.Assertions.assertThat;
         Player p2 = new FixedPlayer(Move.ROCK, "Player2");
 
         FakeCommandInterface io = new FakeCommandInterface();
-        GameContext context = new GameContext(p1, p2, io, new OutcomeEvaluator());
+        GameContext context = new GameContext(p1, p2, io);
         PlayTurnCommand cmd = new PlayTurnCommand(context);
 
         cmd.execute();

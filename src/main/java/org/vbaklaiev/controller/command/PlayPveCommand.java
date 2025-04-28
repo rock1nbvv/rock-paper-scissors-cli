@@ -2,16 +2,16 @@ package org.vbaklaiev.controller.command;
 
 import org.vbaklaiev.model.GameContext;
 
-public class PlayGameCommand implements Command {
+public class PlayPveCommand implements Command {
     private final GameContext context;
 
-    public PlayGameCommand(GameContext context) {
+    public PlayPveCommand(GameContext context) {
         this.context = context;
     }
 
     @Override
     public String name() {
-        return "play";
+        return "pve";
     }
 
     @Override

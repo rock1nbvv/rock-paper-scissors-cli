@@ -1,6 +1,5 @@
 package org.vbaklaiev.model;
 
-import org.vbaklaiev.controller.OutcomeEvaluator;
 import org.vbaklaiev.model.player.Player;
 import org.vbaklaiev.view.CommandInterface;
 
@@ -13,18 +12,24 @@ public class GameContext {
     public int wins2 = 0;
     public int draws = 0;
     public final CommandInterface io;
-    public final OutcomeEvaluator outcomeEvaluator;
 
-    public GameContext(Player p1, Player p2, CommandInterface io, OutcomeEvaluator service) {
+    public GameContext(Player p1, Player p2, CommandInterface io) {
         this.player1 = p1;
         this.player2 = p2;
         this.io = io;
-        this.outcomeEvaluator = service;
     }
     public void resetStatistics() {
         this.wins1 = 0;
         this.wins2 = 0;
         this.draws = 0;
         this.currentRound = 0;
+    }
+
+    public static class OutcomeEvaluator {
+
+        public static Result evaluate(Move player1, Move player2) {
+            if (player1 == player2) return Result.DRAW;
+            return player1.beats(player2) ? Result.WIN : Result.LOSE;
+        }
     }
 }

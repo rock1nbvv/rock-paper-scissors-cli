@@ -26,20 +26,12 @@ public class PlayTurnCommand implements Command {
         context.io.print(context.player1.getName() + " chose: " + m1);
         context.io.print(context.player2.getName() + " chose: " + m2);
 
-        Result result = context.outcomeEvaluator.evaluate(m1, m2);
+        Result result = GameContext.OutcomeEvaluator.evaluate(m1, m2);
         switch (result) {
-            case WIN -> {
-                context.io.print(context.player1.getName() + " is the winner of he round");
-                context.wins1++;
-            }
-            case LOSE -> {
-                context.io.print(context.player2.getName() + " is the winner of he round");
-                context.wins2++;
-            }
-            case DRAW -> {
-                context.io.print("This round is a draw.");
-                context.draws++;
-            }
+            case WIN -> context.wins1++;
+            case LOSE -> context.wins2++;
+            case DRAW -> context.draws++;
         }
+        context.io.print(context.player1.getName() + " - " + context.wins1 + "\t" + context.player2.getName() + " - " + context.wins2 + "\tDraws - " + context.draws);
     }
 }
