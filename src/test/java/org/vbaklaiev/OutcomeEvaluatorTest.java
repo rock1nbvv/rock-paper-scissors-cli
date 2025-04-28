@@ -11,16 +11,16 @@ public class OutcomeEvaluatorTest {
 
     @Test
     void returnsWinWhenPlayerMoveBeatsOpponent() {
-        assertThat(GameContext.OutcomeEvaluator.evaluate(Move.ROCK, Move.SCISSORS)).isEqualTo(Result.WIN);
+        assertThat(GameContext.evaluateTurn(Move.ROCK, Move.SCISSORS)).isEqualTo(Result.WIN);
     }
 
     @Test
     void returnsLoseWhenPlayerMoveLosesToOpponent() {
-        assertThat(GameContext.OutcomeEvaluator.evaluate(Move.SCISSORS, Move.ROCK)).isEqualTo(Result.LOSE);
+        assertThat(GameContext.evaluateTurn(Move.SCISSORS, Move.ROCK)).isEqualTo(Result.LOSE);
     }
 
     @Test
     void returnsDrawWhenMovesAreEqual() {
-        assertThat(GameContext.OutcomeEvaluator.evaluate(Move.PAPER, Move.PAPER)).isEqualTo(Result.DRAW);
+        assertThat(GameContext.evaluateTurn(Move.PAPER, Move.PAPER)).isEqualTo(Result.DRAW);
     }
 }

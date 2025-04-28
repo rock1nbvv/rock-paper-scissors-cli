@@ -10,7 +10,9 @@ public class ShowResultsCommand implements Command {
     }
 
     @Override
-    public String name() { return "show-results"; }
+    public String name() {
+        return "show-results";
+    }
 
     @Override
     public void execute() {

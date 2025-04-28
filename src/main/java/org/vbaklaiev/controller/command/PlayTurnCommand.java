@@ -26,8 +26,7 @@ public class PlayTurnCommand implements Command {
         context.io.print(context.player1.getName() + " chose: " + m1);
         context.io.print(context.player2.getName() + " chose: " + m2);
 
-        Result result = GameContext.OutcomeEvaluator.evaluate(m1, m2);
-        switch (result) {
+        switch (GameContext.evaluateTurn(m1, m2)) {
             case WIN -> context.wins1++;
             case LOSE -> context.wins2++;
             case DRAW -> context.draws++;

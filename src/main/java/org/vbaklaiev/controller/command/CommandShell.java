@@ -7,7 +7,7 @@ import org.vbaklaiev.view.CommandInterface;
  * Central input loop that dispatches user commands
  */
 public class CommandShell {
-    private final CommandRegistry registry;
+    private CommandRegistry registry;
     private final CommandInterface io;
 
     public CommandShell(CommandRegistry registry, CommandInterface io) {
@@ -24,5 +24,13 @@ public class CommandShell {
                     () -> io.print("Unknown command. Try again")
             );
         }
+    }
+
+    public CommandRegistry getRegistry() {
+        return registry;
+    }
+
+    public void setRegistry(CommandRegistry registry) {
+        this.registry = registry;
     }
 }
