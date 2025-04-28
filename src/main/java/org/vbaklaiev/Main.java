@@ -1,14 +1,14 @@
 package org.vbaklaiev;
 
 import org.vbaklaiev.controller.CommandRegistry;
+import org.vbaklaiev.controller.OutcomeEvaluator;
+import org.vbaklaiev.model.player.PlayerFactory;
 import org.vbaklaiev.controller.command.CommandShell;
-import org.vbaklaiev.model.GameContext;
 import org.vbaklaiev.controller.command.PlayGameCommand;
 import org.vbaklaiev.controller.command.exit.DefaultExitHandler;
 import org.vbaklaiev.controller.command.exit.ExitCommand;
-import org.vbaklaiev.controller.OutcomeEvaluator;
-import org.vbaklaiev.controller.PlayerFactory;
-import org.vbaklaiev.model.Player;
+import org.vbaklaiev.model.GameContext;
+import org.vbaklaiev.model.player.Player;
 import org.vbaklaiev.view.CommandInterface;
 import org.vbaklaiev.view.ConsoleCommandInterface;
 
@@ -17,7 +17,8 @@ public class Main {
         CommandInterface io = new ConsoleCommandInterface();
         PlayerFactory factory = new PlayerFactory();
 
-        Player human = factory.createHumanPlayer(io);
+        String playerName = io.readInput("Enter your name: ");
+        Player human = factory.createHumanPlayer(io, playerName);
         Player computer = factory.createComputerPlayer();
 
         OutcomeEvaluator evaluator = new OutcomeEvaluator();

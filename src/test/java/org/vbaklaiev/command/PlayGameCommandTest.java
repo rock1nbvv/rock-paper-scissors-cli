@@ -5,7 +5,7 @@ import org.vbaklaiev.controller.command.PlayGameCommand;
 import org.vbaklaiev.model.GameContext;
 import org.vbaklaiev.controller.OutcomeEvaluator;
 import org.vbaklaiev.model.Move;
-import org.vbaklaiev.model.Player;
+import org.vbaklaiev.model.player.Player;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

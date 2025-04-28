@@ -1,14 +1,17 @@
-package org.vbaklaiev.model;
+package org.vbaklaiev.model.player;
 
+import org.vbaklaiev.model.Move;
 import org.vbaklaiev.view.CommandInterface;
 
 import java.util.Optional;
 
 public class HumanPlayer implements Player {
     private final CommandInterface io;
+    private final String name;
 
-    public HumanPlayer(CommandInterface io) {
+    public HumanPlayer(CommandInterface io, String name) {
         this.io = io;
+        this.name = name;
     }
 
     @Override
@@ -26,6 +29,6 @@ public class HumanPlayer implements Player {
 
     @Override
     public String getName() {
-        return "You";
+        return this.name;
     }
 }

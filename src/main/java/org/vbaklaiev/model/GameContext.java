@@ -1,6 +1,7 @@
 package org.vbaklaiev.model;
 
 import org.vbaklaiev.controller.OutcomeEvaluator;
+import org.vbaklaiev.model.player.Player;
 import org.vbaklaiev.view.CommandInterface;
 
 public class GameContext {
@@ -19,5 +20,11 @@ public class GameContext {
         this.player2 = p2;
         this.io = io;
         this.outcomeEvaluator = service;
+    }
+    public void resetStatistics() {
+        this.wins1 = 0;
+        this.wins2 = 0;
+        this.draws = 0;
+        this.currentRound = 0;
     }
 }

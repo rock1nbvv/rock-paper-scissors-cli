@@ -1,4 +1,6 @@
-package org.vbaklaiev.model;
+package org.vbaklaiev.model.player;
+
+import org.vbaklaiev.model.Move;
 
 import java.util.Random;
 
