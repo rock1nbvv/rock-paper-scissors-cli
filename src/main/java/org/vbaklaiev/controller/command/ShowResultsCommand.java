@@ -10,7 +10,9 @@ public class ShowResultsCommand implements Command {
     }
 
     @Override
-    public String name() { return "show-results"; }
+    public String name() {
+        return "show-results";
+    }
 
     @Override
     public void execute() {
@@ -18,5 +20,7 @@ public class ShowResultsCommand implements Command {
         context.io.print(context.player1.getName() + ": " + context.wins1);
         context.io.print(context.player2.getName() + ": " + context.wins2);
         context.io.print("Draws: " + context.draws);
+
+        context.resetStatistics();
     }
 }

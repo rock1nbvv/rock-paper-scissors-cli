@@ -3,7 +3,6 @@ package org.vbaklaiev.command;
 import org.junit.jupiter.api.Test;
 import org.vbaklaiev.controller.command.StartGameCommand;
 import org.vbaklaiev.model.GameContext;
-import org.vbaklaiev.controller.OutcomeEvaluator;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -13,7 +12,7 @@ public class StartGameCommandTest {
         FakeCommandInterface io = new FakeCommandInterface();
         io.addInput("3");
 
-        GameContext context = new GameContext(null, null, io, new OutcomeEvaluator());
+        GameContext context = new GameContext(null, null, io);
         StartGameCommand cmd = new StartGameCommand(context);
 
         cmd.execute();
@@ -28,7 +27,7 @@ public class StartGameCommandTest {
         io.addInput("-2");
         io.addInput("3");
 
-        GameContext context = new GameContext(null, null, io, null);
+        GameContext context = new GameContext(null, null, io);
         StartGameCommand cmd = new StartGameCommand(context);
 
         cmd.execute();

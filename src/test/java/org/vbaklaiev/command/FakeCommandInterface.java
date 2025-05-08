@@ -10,6 +10,7 @@ import java.util.Queue;
 /**
  * Fake implementation of CommandInterface used for testing.
  * Mocks for user input/output.
+ * <p>
  * TODO can be rewritten with mockito
  */
 public class FakeCommandInterface implements CommandInterface {
